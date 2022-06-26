@@ -1,0 +1,110 @@
+\documentclass[12pt]{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+
+\title{1404. Легко взломать!}
+\author{Затирахин Кирилл, Винников Кирилл}
+%\date{Июнь 2022}
+
+\usetheme{Berlin}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Оглавление}
+    \tableofcontents
+\end{frame}
+
+\section{Ссылки}
+
+\begin{frame}{Ссылки}
+     \href{https://github.com/ZatirahinKirill/practic--2022}{https://github.com/ZatirahinKirill/practic--2022}
+
+     \href{https://github.com/VinnikovKirill/summer-2022}{https://github.com/VinnikovKirill/summer-2022}
+\end{frame}
+
+\section{Условие задачи}
+
+\begin{frame}{Условие задачи}
+    Дано зашифрованное слово длиной не более 100 символов. Необходимо получить изначальное сообщение, если известен алгоритм его шифрования.
+    \begin{enumerate}
+        \item Каждая буква заменяется соответствующим ей числом: a на 0, b на 1, ..., z на 25.
+        \item К первому числу добавляется 5, ко второму числу добавляется первое число, к третьему — второе и т.д. 
+        \item Если какое-то число превосходит 25, то оно заменяется остатком от деления на 26. 
+        \item Полученные числа обратно заменяются буквами.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Пример}
+
+\setlength\tabcolsep{13PX}
+\renewcommand*{\arraystretch}{2}
+
+    \begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        - & s & e & c & r & e & t\\
+        \hline
+        Шаг 1. & 18 & 4 & 2 & 17 & 4 & 19\\
+        Шаг 2. & 23 & 27 & 29 & 46 & 50 & 69\\
+        Шаг 3. & 23 & 1 & 3 & 20 & 24 & 17\\
+        Шаг 4. & x & b & d & u & y & r\\
+        \hline
+    \end{tabular}
+    \end{table}
+    
+\end{frame}
+
+\section{Решение}
+
+\begin{frame}{Решение}
+\fontsize{15pt}{15pt}\selectfont
+    \begin{equation}
+        \begin{cases}
+            \widetilde{n}_{1} = n_{1} + 5\\
+            \widetilde{n}_{2} = n_{2} + \widetilde{n}_{1}\\
+            \widetilde{n}_{3} = n_{3} + \widetilde{n}_{2}\\
+            ...\\
+            \widetilde{n}_{k} = n_{k} + \widetilde{n}_{k-1}\\
+        \end{cases}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Решение}
+\fontsize{15pt}{15pt}\selectfont
+    \begin{equation}
+        \begin{cases}
+            n_{1} = \widetilde{n}_{1} - 5\\
+            n_{2} = \widetilde{n}_{2} - \widetilde{n}_{1} = \widetilde{n}_{2} - (n_{1} + 5)\\
+            n_{3} = \widetilde{n}_{3} - \widetilde{n}_{2} = \widetilde{n}_{3} - (n_{1} + n_{2} + 5)\\
+            ...\\
+            n_{k} = \widetilde{n}_{k} - \widetilde{n}_{k-1} = \widetilde{n}_{k} - (\sum\limits_{i=1}^{k-1} n_{i} + 5)\\
+        \end{cases}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Решение}
+\centering
+\fontsize{15pt}{15pt}\selectfont
+    \begin{equation}
+        \begin{cases}
+            0 \leq \widetilde{n}_{k} \leq 25\\
+            \sum\limits_{i=1}^{k-1} n_{i} + 5 \geq 5\\
+        \end{cases}
+    \end{equation}
+    Возможна ситуация, когда\\
+    $\widetilde{n}_{k} < \sum\limits_{i=1}^{k-1} n_{i} + 5$
+\end{frame}
+
+%\begin{frame}{Решение}
+%\centering
+%\fontsize{15pt}{15pt}\selectfont
+%    while (\widetilde{n}_{k} < \sum\limits_{i=1}^{k-1} n_{i} + 5)\\
+%    \widetilde{n}_{k} = \widetilde{n}_{k} + 26\\
+%\end{frame}
+
+\end{document}
