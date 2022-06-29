@@ -3,19 +3,53 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{hyperref}
+<<<<<<< HEAD
+\usepackage{tikz}
+\usepackage{minted}
+
+\title{Научно-исследовательская практика. Timus: 1404. Легко взломать! (81 pts)}
+\author{Затирахин Кирилл, Винников Кирилл}
+\date{1 Июля 2022}
+=======
 
 \title{1404. Легко взломать!}
 \author{Затирахин Кирилл, Винников Кирилл}
 %\date{Июнь 2022}
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 
 \usetheme{Berlin}
 
 \begin{document}
 
+<<<<<<< HEAD
+%\maketitle
+\begin{titlepage}
+
+        \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+
+\end{titlepage}
+
+\begin{frame}{Оглавление}
+    \tableofcontents
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
 \maketitle
 
 \begin{frame}{Оглавление}
     \tableofcontents
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \section{Ссылки}
@@ -24,6 +58,17 @@
      \href{https://github.com/ZatirahinKirill/practic--2022}{https://github.com/ZatirahinKirill/practic--2022}
 
      \href{https://github.com/VinnikovKirill/summer-2022}{https://github.com/VinnikovKirill/summer-2022}
+<<<<<<< HEAD
+     
+     \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \section{Условие задачи}
@@ -31,11 +76,27 @@
 \begin{frame}{Условие задачи}
     Дано зашифрованное слово длиной не более 100 символов. Необходимо получить изначальное сообщение, если известен алгоритм его шифрования.
     \begin{enumerate}
+<<<<<<< HEAD
+        \item Каждая буква заменяется соответствующим ей числом: a на 0, b на 1, ..., z на 25.
+        \item К первому числу добавляется 5, ко второму числу добавляется первое число, к третьему — второе и т.д. 
+        \item Если какое-то число превосходит 25, то оно заменяется остатком от деления на 26. 
+        \item Полученные числа обратно заменяются буквами.
+    \end{enumerate}
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
         \item<2-> Каждая буква заменяется соответствующим ей числом: a на 0, b на 1, ..., z на 25.
         \item<3-> К первому числу добавляется 5, ко второму числу добавляется первое число, к третьему — второе и т.д. 
         \item<4-> Если какое-то число превосходит 25, то оно заменяется остатком от деления на 26. 
         \item<5-> Полученные числа обратно заменяются буквами.
     \end{enumerate}
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \begin{frame}{Пример}
@@ -57,6 +118,16 @@
     \end{tabular}
     \end{table}
     
+<<<<<<< HEAD
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \section{Решение}
@@ -72,6 +143,17 @@
             \widetilde{n}_{k} = n_{k} + \widetilde{n}_{k-1}\\
         \end{cases}
     \end{equation}
+<<<<<<< HEAD
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \begin{frame}{Решение}
@@ -85,6 +167,17 @@
             n_{k} = \widetilde{n}_{k} - \widetilde{n}_{k-1} = \widetilde{n}_{k} - (\sum\limits_{i=1}^{k-1} n_{i} + 5)\\
         \end{cases}
     \end{equation}
+<<<<<<< HEAD
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+=======
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 \end{frame}
 
 \begin{frame}{Решение}
@@ -98,6 +191,90 @@
     \end{equation}
     Возможна ситуация, когда\\
     $\widetilde{n}_{k} < \sum\limits_{i=1}^{k-1} n_{i} + 5$
+<<<<<<< HEAD
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+\end{frame}
+
+\begin{frame}{Решение}
+    Таким образом, разность может быть меньше нуля. Как тогда найти исходное положительное число? Так как мы работаем по модулю 26, мы можем:
+    \begin{enumerate}
+        \item $\widetilde{n}_{k}$ увеличивать на 26 до тех пор, пока оно не превзойдет вычитаемое.
+        \item Полученный отрицательный результат ${n}_{k}$ увеличивать на 26 до тех пор, пока он не станет положительным.
+    \end{enumerate}
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+\end{frame}
+
+\section{Source Code}
+
+\begin{frame}[fragile]
+    \frametitle{Source Code}
+    \rule{\textwidth}{1pt}
+    \scriptsize
+    \begin{minted}{python}
+    word=input()
+    output1 = []
+    for char in word:
+        number = ord(char) - 97
+        output1.append(number)
+
+    output2 = []
+    count=output1[0]
+    if (count<5):
+        output2.append(26-(5-count))
+    else:
+        output2.append(count-5)
+    \end{minted}
+        
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+        
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Source Code}
+    \rule{\textwidth}{1pt}
+    \scriptsize
+    \begin{minted}{python}
+        for num in output1[1:]:
+            while (num <count):
+                num=num+26
+            output2.append(num-count)
+            count=num
+            
+        new_word =[]    
+        for num in output2:
+            char = chr(num + 97)
+            new_word.append(char)
+        print ("".join(new_word))
+    \end{minted}
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[left=0.5cm, above=1cm] at (current page.south east) 
+        {
+        \includegraphics[width=0.05\textwidth]{CMYK_BFU_logo_cut_cy (1).png}
+        };
+    \end{tikzpicture}
+    
+\end{frame}
+=======
 \end{frame}
 
 %\begin{frame}{Решение}
@@ -106,5 +283,6 @@
 %    while (\widetilde{n}_{k} < \sum\limits_{i=1}^{k-1} n_{i} + 5)\\
 %    \widetilde{n}_{k} = \widetilde{n}_{k} + 26\\
 %\end{frame}
+>>>>>>> f9e3402ab09d17af1ee038db35899bd9abb5d11c
 
 \end{document}
